@@ -1,3 +1,4 @@
+//clear mind but only 90 points
 import java.io.*;
 import java.util.*;
 
