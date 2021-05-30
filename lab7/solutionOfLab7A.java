@@ -39,7 +39,6 @@ public class solutionOfLab7A {
             node a = nodes.get(i);
             if (LinearMatch(a, a.start)) {
                 ans += a.goal;
-                match(a, a.start);
             }
         }
         out.println(ans);
@@ -50,6 +49,7 @@ public class solutionOfLab7A {
         if (x > i.end) return false;
         if (timeslot[x] == null) {
             // x matches ai
+            timeslot[x] = i;
             return true;
         }
         node j = timeslot[x];//getTaskOf(x)
@@ -58,22 +58,11 @@ public class solutionOfLab7A {
         } else {
             if (LinearMatch(j, x + 1)) {
                 //x matches ai
+                timeslot[x] = i;
                 return true;
             }
         }
         return false;
-    }
-
-    static void match(node a, int x) {
-        node tmp = timeslot[x];
-        if (tmp == null) {
-            timeslot[x] = a;
-        } else if (a.end >= tmp.end) {
-            match(a, x + 1);
-        } else {
-            timeslot[x] = a;
-            match(tmp, x + 1);
-        }
     }
 
     static class Reader {
