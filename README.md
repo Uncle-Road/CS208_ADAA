@@ -1,2 +1,3 @@
-# cs208_ADAA
-only to repo, please **not use** it in course
+# CS208_ADAA
+
+just to repo, for reference only
